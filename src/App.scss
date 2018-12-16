@@ -1,26 +1,20 @@
 .App {
   display: flex;
   justify-content: center;
-}
 
-.Hexgrid {
   --hex-width: 100px;
   --hex-between: 10px;
 
-  /* Other hexagon dimentions */
+  /* Other hexagon dim */
   --hex-height: calc(var(--hex-width) / 1.73 /* sqrt(3) */);
   --hex-margin: calc(var(--hex-width) / 2);
   --hex-border: calc(var(--hex-margin) / 1.73 /* sqrt(3) */);
+}
 
+.Hexgrid {
   display: grid;
-  grid-template-columns: var(--hex-width) var(--hex-width) var(--hex-width) var(
-      --hex-width
-    );
+  grid-template-columns: var(--hex-width) var(--hex-width);
   grid-auto-rows: calc(var(--hex-width) - 28.87px / 2);
   grid-gap: var(--hex-between) var(--hex-between);
   padding-bottom: var(--hex-border);
 }
-
-/* .Hexgrid:nth-child(even) {
-  margin-left: 5rem;
-} */

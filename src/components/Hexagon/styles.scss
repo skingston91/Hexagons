@@ -1,38 +1,55 @@
 .Hexagon {
-  --hex-width: 100px;
-  --hex-between: 10px;
-  position: relative;
-  width: 150px;
-  height: 86.6px;
-  margin: 43.3px 0;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  height: var(--hex-height);
+  width: var(--hex-width);
+  margin: var(--hex-border) 0;
+  position: relative;
+  cursor: pointer;
 
-  &:before,
-  &:after {
+  &:after,
+  &:before {
+    border-left: var(--hex-margin) solid transparent;
+    border-right: var(--hex-margin) solid transparent;
     content: "";
+    left: 0;
     position: absolute;
     width: 0;
-    border-left: 75px solid transparent;
-    border-right: 75px solid transparent;
+  }
+
+  &:after {
+    border-top: var(--hex-border) solid;
+    top: 100%;
   }
 
   &:before {
+    border-bottom: var(--hex-border) solid;
     bottom: 100%;
-    border-bottom: 43.3px solid;
   }
 
-  &:after {
-    top: 100%;
-    width: 0;
-    border-top: 43.3px solid;
+  &:nth-child(4n + 3),
+  &:nth-child(4n + 4),
+  &:nth-child(4n + 7),
+  &:nth-child(4n + 8) {
+    margin-left: calc(var(--hex-width) / 2 + var(--hex-between) / 2);
+  }
+
+  &:hover {
+    background-color: black;
+    &:before {
+      border-bottom-color: black;
+    }
+    &:after {
+      border-top-color: black;
+    }
   }
 }
 
 .Hexagon__text {
-  font-size: 20px;
+  font-size: 15px;
   color: white;
+  text-align: center;
 }
 
 .Hexagon--red {
@@ -65,13 +82,13 @@
   }
 }
 
-.Hexagon--yellow {
-  background-color: yellow;
+.Hexagon--orange {
+  background-color: orange;
   &:before {
-    border-bottom-color: yellow;
+    border-bottom-color: orange;
   }
   &:after {
-    border-top-color: yellow;
+    border-top-color: orange;
   }
 }
 
