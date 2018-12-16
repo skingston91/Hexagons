@@ -1,0 +1,86 @@
+.Hexagon {
+  --hex-width: 100px;
+  --hex-between: 10px;
+  position: relative;
+  width: 150px;
+  height: 86.6px;
+  margin: 43.3px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    border-left: 75px solid transparent;
+    border-right: 75px solid transparent;
+  }
+
+  &:before {
+    bottom: 100%;
+    border-bottom: 43.3px solid;
+  }
+
+  &:after {
+    top: 100%;
+    width: 0;
+    border-top: 43.3px solid;
+  }
+}
+
+.Hexagon__text {
+  font-size: 20px;
+  color: white;
+}
+
+.Hexagon--red {
+  background-color: red;
+  &:before {
+    border-bottom-color: red;
+  }
+  &:after {
+    border-top-color: red;
+  }
+}
+
+.Hexagon--blue {
+  background-color: blue;
+  &:before {
+    border-bottom-color: blue;
+  }
+  &:after {
+    border-top-color: blue;
+  }
+}
+
+.Hexagon--green {
+  background-color: green;
+  &:before {
+    border-bottom-color: green;
+  }
+  &:after {
+    border-top-color: green;
+  }
+}
+
+.Hexagon--yellow {
+  background-color: yellow;
+  &:before {
+    border-bottom-color: yellow;
+  }
+  &:after {
+    border-top-color: yellow;
+  }
+}
+
+.Hexagon--pink {
+  background-color: pink;
+  &:before {
+    border-bottom-color: pink;
+  }
+  &:after {
+    border-top-color: pink;
+  }
+}

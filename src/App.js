@@ -1,25 +1,25 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Hexagon from "./components/Hexagon";
+
+import "./App.scss";
+
+const hexes = [
+  { type: "Book", colour: "red" },
+  { type: "Online Course", colour: "green" },
+  { type: "Article", colour: "blue" },
+  { type: "Mentor", colour: "yellow" },
+  { type: "Course", colour: "pink" }
+];
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <div className="Hexgrid">
+          {hexes.map(hex => (
+            <Hexagon colour={hex.colour} text={hex.type} />
+          ))}
+        </div>
       </div>
     );
   }
